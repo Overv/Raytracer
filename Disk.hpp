@@ -1,18 +1,18 @@
 #pragma once
 
-#include <glm/vec3.hpp>
 #include "Geometry.hpp"
 #include "Ray.hpp"
 #include "Intersection.hpp"
 #include "PhongMaterial.hpp"
 
-struct Sphere : Geometry {
-	Sphere(const glm::vec3& center, float radius, std::shared_ptr<PhongMaterial> material)
-		: center(center), radius(radius), material(material) {}
+struct Disk : Geometry {
+	Disk(const glm::vec3& center, const glm::vec3& normal, float radius, std::shared_ptr<PhongMaterial> material)
+		: center(center), normal(normal), radius(radius), material(material) {}
 
 	Intersection intersect(const Ray& ray) const;
 
 	glm::vec3 center;
+	glm::vec3 normal;
 	float radius;
 	std::shared_ptr<PhongMaterial> material;
 };

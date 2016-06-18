@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Disk.cpp" />
     <ClCompile Include="Raytracer.cpp" />
     <ClCompile Include="Sphere.cpp" />
   </ItemGroup>
@@ -157,8 +158,10 @@
     <ClInclude Include="Camera.hpp" />
     <ClInclude Include="Color.hpp" />
     <ClInclude Include="Config.hpp" />
+    <ClInclude Include="Geometry.hpp" />
     <ClInclude Include="Intersection.hpp" />
     <ClInclude Include="PhongMaterial.hpp" />
+    <ClInclude Include="Disk.hpp" />
     <ClInclude Include="PointLight.hpp" />
     <ClInclude Include="Ray.hpp" />
     <ClInclude Include="Raytracer.hpp" />
