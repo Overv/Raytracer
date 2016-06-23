@@ -4,7 +4,7 @@
 Intersection Disk::intersect(const Ray& ray) const {
 	float denom = glm::dot(normal, ray.dir);
 
-	if (std::abs(denom) < 1e-6) {
+	if (std::abs(denom) < 1e-6f) {
 		return Intersection(ray);
 	}
 	

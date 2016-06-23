@@ -22,10 +22,10 @@ int main(int argc, char* argv[]) {
 
 	auto baseMaterial = std::make_shared<PhongMaterial>(Color(16, 0, 0), Color(255, 0, 0), Color(255, 255, 255), 20.0f);
 
-	scene.renderables.push_back(std::make_shared<Sphere>(glm::vec3(0.0f, 0.0f, -4.0f), 1.0f, baseMaterial));
-	scene.renderables.push_back(std::make_shared<Disk>(glm::vec3(0.0f, -1.0f, -4.0f), glm::vec3(0.0f, 1.0f, 0.0f), 2.0f, baseMaterial));
+	scene.geometry.push_back(std::make_shared<Sphere>(glm::vec3(0.0f, 0.0f, -4.0f), 1.0f, baseMaterial));
+	scene.geometry.push_back(std::make_shared<Disk>(glm::vec3(0.0f, -1.0f, -4.0f), glm::vec3(0.0f, 1.0f, 0.0f), 2.0f, baseMaterial));
 
-	scene.lights.push_back(std::make_shared<PointLight>(glm::vec3(0.0f, 10.0f, -2.0f)));
+	scene.lights.push_back(std::make_shared<PointLight>(glm::vec3(0.0f, 1.5f, -2.0f)));
 
 	Raytracer raytracer(Config::WIDTH, Config::HEIGHT, camera, scene);
 

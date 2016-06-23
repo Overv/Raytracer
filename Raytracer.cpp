@@ -1,5 +1,6 @@
 #include "Raytracer.hpp"
 #include "PhongMaterial.hpp"
+#include "Geometry.hpp"
 #include <algorithm>
 
 const std::vector<Color>& Raytracer::render_frame() {
@@ -12,8 +13,8 @@ const std::vector<Color>& Raytracer::render_frame() {
 
 			Intersection closestIntersection(ray);
 			
-			for (const auto& renderable : scene.renderables) {
-				Intersection intersection = renderable->intersect(ray);
+			for (const auto& geom : scene.geometry) {
+				Intersection intersection = geom->intersect(ray);
 
 				if (!closestIntersection.hit || (intersection.hit && intersection.distance < closestIntersection.distance)) {
 					closestIntersection = intersection;
@@ -24,7 +25,11 @@ const std::vector<Color>& Raytracer::render_frame() {
 				Color totalLight;
 
 				for (const auto& light : scene.lights) {
-					totalLight = totalLight + closestIntersection.material->calculateColor(closestIntersection, *light);
+					if (x == 400 && y == 399) {
+						int foo = 3;
+					}
+
+					totalLight = totalLight + closestIntersection.material->calculateColor(scene, closestIntersection, *light);
 				}
 
 				setPixel(x, y, totalLight);

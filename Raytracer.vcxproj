@@ -151,6 +151,7 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Disk.cpp" />
+    <ClCompile Include="PointLight.cpp" />
     <ClCompile Include="Raytracer.cpp" />
     <ClCompile Include="Sphere.cpp" />
   </ItemGroup>
